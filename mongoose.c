@@ -1199,6 +1199,11 @@ void ns_mgr_free(struct ns_mgr *s) {
 // net_skeleton end
 #endif  // NOEMBED_NET_SKELETON
 
+#if defined(__rtems__)
+#include <md5.h>
+#define HAVE_MD5
+#endif // __rtems__
+
 #include <ctype.h>
 
 #ifdef _WIN32         //////////////// Windows specific defines and includes
